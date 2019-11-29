@@ -1,4 +1,4 @@
-# CNN Based Captcha Breaker Project
+# Captcha Breaker Project
 
 Required dependencies: python-captcha, opencv, python-tensorflow (CPU or GPU)
 
@@ -6,10 +6,10 @@ Required dependencies: python-captcha, opencv, python-tensorflow (CPU or GPU)
 ## Generating captchas
 
 ```
-./generate.py --width 128 --height 64 --length 4 --symbols symbols.txt --count 3200 --output-dir test
+./generate.py --width 128 --height 64 --length 5 --symbols symbols.txt --count 10000 --output-dir test
 ```
 
-This generates 3200 128x64 pixel captchas with 4 symbols per captcha, using the
+This generates 10000 128x64 pixel captchas with 5 symbols per captcha, using the
 set of symbols in the `symbols.txt` file. The captchas are stored in the folder
 `test`, which is created if it doesn't exist. The names of the captcha images
 are scrambled.
@@ -22,14 +22,11 @@ there are no images that are in both sets.
 ## Training the neural network
 
 ```
-./train.py --width 128 --height 64 --length 4 --symbols symbols.txt --batch-size 4 --epochs 2 --output-model test.h5 --train-dataset training_data --validate-dataset validation_data
+./train.py --width 128 --height 64 --length 5 --symbols symbols.txt --batch-size 10 --epochs 4 --output-model test.h5 --train-dataset training_data --validate-dataset validation_data
 ```
 
-Train the neural network for 2 epochs on the data specified. One epoch is one
+Train the neural network for 4 epochs on the data specified. One epoch is one
 pass through the full dataset.
-
-The suggested training dataset size for the initial training for captcha length of 4 symbols
-is 20000 images, with a validation dataset size of 4000 images.
 
 ## Running the classifier
 
