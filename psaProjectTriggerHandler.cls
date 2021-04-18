@@ -22,8 +22,7 @@
  ***************************************************************************************/
 public with sharing class psaProjectTriggerHandler implements psaITriggerHandler {
 
-   
-  
+
     List<pse__Project_Location__c> projLocations = new List<pse__Project_Location__c> ();
     List<pse__Billing_Event__c> besToUpdate = new List<pse__Billing_Event__c> ();
     List<Id> projToAddLocations = new List<Id> ();
@@ -69,9 +68,12 @@ public with sharing class psaProjectTriggerHandler implements psaITriggerHandler
     List<pse__Proj__c> defaultAssignmentProjects = new List<pse__Proj__c> ();
     List<pse__Schedule__c> defaultAssignmentSchedules = new List<pse__Schedule__c> ();
     List<pse__Assignment__c> defaultAssignments = new List<pse__Assignment__c> ();*/
+
   asdsadadasdsadfsadfvcz
   asfafasfafafsaf
   asfasfdfasfsaf
+
+ 
   
     public psaProjectTriggerHandler() { }
   
@@ -105,6 +107,7 @@ public with sharing class psaProjectTriggerHandler implements psaITriggerHandler
           daaDadaDL
           dD,daLDad
           \aDAd,adadlAd
+
         } 
       if(trigger.isUpdate){
           projold = (pse__Proj__c) trigger.oldmap.get(proj.id);
